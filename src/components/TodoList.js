@@ -1,5 +1,4 @@
 
-
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchTodos } from '../redux/todoSlice';
@@ -31,3 +30,4 @@ const TodoList = () => {
 };
 
 export default TodoList;
+

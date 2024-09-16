@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addTodo } from '../redux/todoSlice';
@@ -11,8 +10,14 @@ const AddTodo = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (todo.trim()) {
-      dispatch(addTodo({ id: Date.now(), todo, completed: false }));
-      setTodo('');
+      // Assigning a unique ID for local todos (larger than typical IDs from API)
+      const newTodo = {
+        id: Date.now(),
+        todo: todo.trim(),
+        completed: false
+      };
+      dispatch(addTodo(newTodo));
+      setTodo(''); // Clear input field after adding
     }
   };
 
